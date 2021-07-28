@@ -12,7 +12,7 @@ data = read.csv(file="raw_data/data_final2.csv", header=T)
 
 #load required packages 
 #install.packages("pacman") #uncomment line if pacman is not installed
-pacman::p_load(dplyr, tidyr, ggplot2, stringr, knitr, rmarkdown)
+pacman::p_load(dplyr, tidyr, ggplot2, stringr)
 
 
 

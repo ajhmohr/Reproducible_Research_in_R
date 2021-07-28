@@ -1,7 +1,9 @@
 ---
 title: "Pattersonetal2016_FMD_Report"
-date: "2016-09-26"
-output: html_document
+date: '2016-09-26'
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -19,7 +21,7 @@ pacman::p_load(tidyr,
                stringr, 
                knitr)
 
-data = read.csv(file="Pattersonetal2016_FMD_Data.csv", header=T)
+data = read.csv(file="raw_data/data_final2.csv", header=T)
 ```
 
 ## Data Processing
@@ -151,7 +153,7 @@ dataagg$Percent_DR_high_nudge[10] = dataagg$Percent_DR_high_nudge[10]-3
 ```
 
 Create the static figure
-```{r figure 1, fig.align='center'}
+```{r figure1, fig.align='center'}
 ggplot(dataagg, aes(x=Percent_DR_High, y=IB_rev_mean)) + 
   coord_cartesian(ylim=c(1,4), xlim=c(0,105)) +  
   labs(title="Expert Consensus on Risk of Disease Spread and Average Time to Impact on Business", 
